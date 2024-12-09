@@ -1,0 +1,151 @@
+body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to top, #0ED2F7, #B2FEFA);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Login Container */
+#login-container {
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#login-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-form label {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+#login-form input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#login-form button {
+    width: 90%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-form button:hover {
+    background-color: #0056b3;
+}
+
+#login-error {
+    color: red;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Calendar Styles (unchanged) */
+.calendar-container {
+    margin-top: 20px;
+    
+}
+
+#day-calendar{
+    margin-bottom: 2.5rem;
+}
+
+h1 {
+    color: #333;
+    margin: 20px;
+}
+
+.calendar-container {
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+.calendar-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-navigation button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+    border-radius: 4px;
+}
+
+.calendar-navigation button:hover {
+    background-color: #0056b3;
+}
+
+#current-date {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+thead th {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #303030;
+}
+
+tbody td {
+    border: 1px solid #303030;
+    background-color: #eee;
+    padding: 10px;
+    text-align: center;
+}
+
+td.task-cell {
+    cursor: pointer;
+    height: 40px;
+}
+
+td.task-cell:hover {
+    background-color: #f1f1f1;
+}
+
+td.task-cell.selected {
+    background-color: #007BFF;
+    color: white;
+}
