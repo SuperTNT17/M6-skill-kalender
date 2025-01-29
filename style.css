@@ -22,6 +22,7 @@ body {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
 }
 
 #login-container h1 {
@@ -33,11 +34,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 #login-form label {
     margin-bottom: 5px;
     color: #555;
+    
 }
 
 #login-form input {
@@ -46,6 +49,7 @@ body {
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    
 }
 
 #login-form button {
@@ -56,10 +60,12 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    
 }
 
 #login-form button:hover {
     background-color: #0056b3;
+    
 }
 
 #login-error {
@@ -148,4 +154,81 @@ td.task-cell:hover {
 td.task-cell.selected {
     background-color: #007BFF;
     color: white;
+}
+
+.paper-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.paper-dropdown select {
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.reservation-form {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.reservation-form select,
+.reservation-form input {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+.reservation-form button {
+    padding: 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reservation-form button:hover {
+    background-color: #0056b3;
+}
+
+.reservation-form {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    width: 200px;
+}
+
+.reservation-form select,
+.reservation-form input {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+.reservation-form button {
+    padding: 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reservation-form button:hover {
+    background-color: #0056b3;
 }
