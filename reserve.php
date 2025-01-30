@@ -12,9 +12,6 @@ try {
     exit; // Stop script execution if connection fails
 }
 
-// $_GET = json_decode(file_get_contents("php://input"), true);
-var_dump($_POST);
-
 $tijd = date("Y-m-d H:i:s", time());
 $papierformaat = strval($_POST['paperSize']);
 $aantal_papier = intval($_POST['paperAmount']);
@@ -37,8 +34,5 @@ try {
 } catch (PDOException $e) {
     echo json_encode(["status" => "error", "message" => "Database error: " . $e->getMessage()]);
 }
-// } else {
-//     echo json_encode(["status" => "error", "message" => "Ongeldige gegevens"]);
-// }
 
 // No need to close the connection explicitly in PDO

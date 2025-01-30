@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         form.classList.add("reservation-form");
         form.action = "reserve.php";
         form.method = "POST";
+        event.preventDefault();
 
         // Dropdown for paper size
         const select = document.createElement("select");
@@ -119,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const reserveButton = document.createElement("input");
         reserveButton.type = "submit";
         reserveButton.value = "Reserveer";
+        reserveButton.addEventListener("click", (event) => setReserved(taskCell));
 
         // Append elements to the form
         form.appendChild(select);
@@ -147,4 +149,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initialize the calendar for today
     generateDayCalendar(currentDate);
+
+    function setReserved(taskCell){
+        taskCell.classList.add("reserved");
+        taskCell.innerHTML = "Reserved";
+    }
 });

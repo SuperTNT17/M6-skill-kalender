@@ -232,3 +232,7 @@ td.task-cell.selected {
 .reservation-form button:hover {
     background-color: #0056b3;
 }
+
+.reserved{
+    background-color: #007BFF;
+}
