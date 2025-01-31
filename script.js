@@ -83,9 +83,13 @@ document.addEventListener("DOMContentLoaded", function () {
         // Create a reservation form
         const form = document.createElement("form");
         form.classList.add("reservation-form");
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            toPhpWithPost(event);
+            // submitFormData(form);
+        });
         form.action = "reserve.php";
-        form.method = "POST";
-        event.preventDefault();
+        // form.method = "POST";
 
         // Dropdown for paper size
         const select = document.createElement("select");
@@ -116,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         sideSelect.id = "printType";
         sideSelect.name = "printType";
-        
+
         const reserveButton = document.createElement("input");
         reserveButton.type = "submit";
         reserveButton.value = "Reserveer";
@@ -136,6 +140,23 @@ document.addEventListener("DOMContentLoaded", function () {
         form.style.display = "block";
     }
 
+     function toPhpWithPost(event) {
+         let form = event.target;
+         let jsonForm = FormToDictionary(form);
+         console.log(jsonForm)
+         let options =
+         {
+             method: "POST",
+             headers: { "Content-Type": "application/json" },
+             body: JSON.stringify(jsonForm)
+         }
+         console.log(options)
+         fetch("reserve.php", options)
+             .then(async (response) => {
+                 console.log(response);
+             });
+     }
+
     // Navigation buttons
     prevDayButton.addEventListener("click", () => {
         currentDate.setDate(currentDate.getDate() - 1);
@@ -150,8 +171,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize the calendar for today
     generateDayCalendar(currentDate);
 
-    function setReserved(taskCell){
+    function setReserved(taskCell) {
         taskCell.classList.add("reserved");
         taskCell.innerHTML = "Reserved";
+    }
+
+    function FormToDictionary(form) {
+        const data = new FormData(form);
+        let formKeyValue = {};
+        for (const [name, value] of data) {
+            formKeyValue[name] = value;
+        }
+        return formKeyValue;
     }
 });

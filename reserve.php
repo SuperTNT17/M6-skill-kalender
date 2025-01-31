@@ -1,6 +1,11 @@
 <?php
 require_once 'config.php';
 
+$json = file_get_contents('php://input');
+echo $json;
+$data = json_decode($json);
+var_dump($data);
+
 // Create connection
 try {
     $conn = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
@@ -13,9 +18,9 @@ try {
 }
 
 $tijd = date("Y-m-d H:i:s", time());
-$papierformaat = strval($_POST['paperSize']);
-$aantal_papier = intval($_POST['paperAmount']);
-$print_type = strval($_POST['printType']);
+$papierformaat = $data->paperSize;
+$aantal_papier = $data->paperAmount;
+$print_type = $data->printType;
 
 try {
     $stmt = $conn->prepare("INSERT INTO reserveringen (tijd, papierformaat, aantal, afdruktype) VALUES (?, ?, ?, ?)");
@@ -26,10 +31,8 @@ try {
 
     if ($stmt->execute()) {
         echo json_encode(["status" => "success", "message" => "Reservering opgeslagen"]);
-        header("Location: index.html");
     } else {
         echo json_encode(["status" => "error", "message" => "Opslaan mislukt"]);
-        header("Location: index.html");
     }
 } catch (PDOException $e) {
     echo json_encode(["status" => "error", "message" => "Database error: " . $e->getMessage()]);
