@@ -1,3 +1,4 @@
 # M6-skill-kalender
 
-dit is een kalender waar je afspraken kan inplannen.
+Dit is een kalender waar je afspraken kan inplannen.  
+Gemaakt voor een opdracht van SD jaar 2.
